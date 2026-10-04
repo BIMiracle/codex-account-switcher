@@ -1,0 +1,11 @@
+/build/
+/release/
+*.user
+*.pdb
+auth.json
+*.dpapi
+*.tmp
+.env
+.env.*
+*.pem
+*.key
