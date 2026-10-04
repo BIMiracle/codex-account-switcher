@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.20)
-project(CodexAccountSwitcher VERSION 1.0.0 LANGUAGES CXX RC)
+project(CodexAccountSwitcher VERSION 0.1.0 LANGUAGES CXX RC)
 if(NOT WIN32 OR NOT MSVC)
   message(FATAL_ERROR "Windows + MSVC required")
 endif()

@@ -16,7 +16,11 @@ Import account JSON, keep encrypted copies locally, and switch Codex file authen
 - **Local encryption**: protect copies with Windows DPAPI for the current user. No network requests, telemetry, or token logs.
 - **Tray and startup**: embedded application icon, minimize to tray, optional startup at Windows sign-in, and existing-window restoration on repeated launches.
 
-## Build and use
+## Download and use
+
+Download the Windows x64 ZIP from the [v0.1.0 release](https://github.com/BIMiracle/codex-account-switcher/releases/tag/v0.1.0), extract it, and run `CodexAccountSwitcher.exe`. No installation is required. A standalone EXE is also available.
+
+### Build from source
 
 Runtime: Windows 11 x64. Building requires Visual Studio with **Desktop development with C++**, the Windows SDK, and CMake.
 

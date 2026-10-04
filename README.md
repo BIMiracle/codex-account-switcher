@@ -16,7 +16,11 @@ Windows 11 轻量账户切换 · 原生 C++ / Win32 桌面工具
 - **本机加密**：副本使用 Windows DPAPI 当前用户加密，无联网、遥测或 token 日志。
 - **托盘与自启**：内置应用图标，支持最小化到托盘、登录 Windows 时自启，重复启动恢复已有窗口。
 
-## 构建与使用
+## 下载与使用
+
+从 [v0.1.0 Release](https://github.com/BIMiracle/codex-account-switcher/releases/tag/v0.1.0) 下载 Windows x64 ZIP，解压后运行 `CodexAccountSwitcher.exe`，无需安装。也可直接下载单个 EXE。界面为中文。
+
+### 从源码构建
 
 运行环境：Windows 11 x64。构建需要 Visual Studio 的 **使用 C++ 的桌面开发**、Windows SDK 和 CMake。
 

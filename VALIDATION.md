@@ -2,6 +2,8 @@
 
 验证日期：2026-10-04（Asia/Singapore）。Windows 11，Visual Studio 2026 / MSVC 19.50，x64 Release，C++17，静态 CRT。
 
+v0.1.0 发布构建：CMake 版本、应用 manifest 和 EXE 文件/产品版本统一为 0.1.0（Windows 数字版本为 0.1.0.0）。`package.ps1` 重新构建并运行账户自测和窗口测试，生成仅含 EXE、中英文说明、验证记录、更新日志及 JSON 库许可证的 Windows x64 ZIP，并生成 EXE/ZIP 的 SHA-256 校验文件。
+
 ## 构建和测试
 
 `./build.ps1` 成功，无编译警告；CMake/CTest 的 `isolated_self_test` 通过。自测只使用 synthetic-* 虚拟字段，在随机临时目录完成后清理，不访问真实 `.codex/auth.json`，不关闭 ChatGPT/Codex。
