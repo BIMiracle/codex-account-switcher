@@ -29,7 +29,7 @@ The script builds Release, runs isolated self-tests, and places `CodexAccountSwi
 1. Click **导入 JSON…** (Import JSON), or drop account files onto the window. Importing does not replace active authentication.
 2. Select an account and restart target, then click **一键切换** (Switch). Double-clicking an account also switches it.
 3. Use **保存当前账户** (Save current account), **恢复上次认证** (Restore previous authentication), or **删除副本** (Delete copy) as needed.
-4. After minimizing, click the tray icon to restore the window. Its context menu offers Show window, Startup, and Exit.
+4. Closing the window also hides it to the tray. Click the tray icon to restore the window. Its context menu offers Show window and Startup; only **Exit** ends the application.
 
 The application interface is currently in Chinese.
 
@@ -38,7 +38,8 @@ The application interface is currently in Chinese.
 | Action after switching | Restart ChatGPT; Codex and file-only mode are available |
 | Minimize to tray | Enabled; the preference can be changed and saved |
 | Startup at sign-in | Disabled; enabling it starts directly in the tray |
-| Close window | Exit; exit is temporarily blocked during account switching |
+| Close window | Always hide to tray, regardless of the minimize preference |
+| Tray menu Exit | End the application; temporarily blocked during account switching |
 
 Save your work before restarting a client. The utility requests a normal shutdown, then terminates related processes still running after 2.5 seconds. If the selected client cannot be found, authentication is left untouched; choose file-only mode instead.
 

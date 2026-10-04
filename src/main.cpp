@@ -143,7 +143,7 @@ static LRESULT CALLBACK Proc(HWND hwnd,UINT msg,WPARAM wp,LPARAM lp) {
  case WM_GETMINMAXINFO: ((MINMAXINFO*)lp)->ptMinTrackSize={610,420};return 0;
  case WM_COMMAND:
   if(LOWORD(wp)==TrayShowId){ShowMain();return 0;}
-  if(LOWORD(wp)==TrayExitId){SendMessageW(hwnd,WM_CLOSE,0,0);return 0;}
+  if(LOWORD(wp)==TrayExitId){if(!busy)DestroyWindow(hwnd);return 0;}
   if(LOWORD(wp)==StartupId){
    try{SetStartup(!StartupEnabled());}catch(...){SendMessageW(GetDlgItem(hwnd,StartupId),BM_SETCHECK,StartupEnabled()?BST_CHECKED:BST_UNCHECKED,0);throw;}
    SendMessageW(GetDlgItem(hwnd,StartupId),BM_SETCHECK,StartupEnabled()?BST_CHECKED:BST_UNCHECKED,0);return 0;
@@ -166,7 +166,7 @@ static LRESULT CALLBACK Proc(HWND hwnd,UINT msg,WPARAM wp,LPARAM lp) {
   } return 0;
  case WM_DROPFILES:{HDROP drop=(HDROP)wp; UINT count=DragQueryFileW(drop,0xffffffff,nullptr,0); try{for(UINT i=0;i<count;i++){wchar_t path[32768]{};DragQueryFileW(drop,i,path,32768);ImportFile(path);}}catch(...){DragFinish(drop);throw;}DragFinish(drop);return 0;}
  case Done:{std::unique_ptr<Result> result((Result*)lp);SetBusy(false);store->Reload();Refresh();SetWindowTextW(status,result->message.c_str());MessageBoxW(hwnd,result->message.c_str(),L"切换结果",MB_OK);return 0;}
- case WM_CLOSE:if(busy)return 0;DestroyWindow(hwnd);return 0;
+ case WM_CLOSE:HideToTray();return 0;
  case TrayCallback:if(lp==WM_LBUTTONUP||lp==WM_LBUTTONDBLCLK)ShowMain();else if(lp==WM_RBUTTONUP||lp==WM_CONTEXTMENU)TrayMenu();return 0;
  case ShowInstance:ShowMain();return 0;
  case WM_DESTROY:RemoveTray();DeleteObject(font);PostQuitMessage(0);return 0;
