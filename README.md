@@ -77,7 +77,3 @@ powershell -ExecutionPolicy Bypass -File .\build.ps1
 构建自测仅使用临时目录和虚拟凭据。窗口测试覆盖图标、托盘、重复启动、偏好保存、自启注册项写入/删除与退出，使用独立临时目录和测试注册表，不改变真实账户或自启项。验证范围见 [VALIDATION.md](VALIDATION.md)。
 
 只读诊断：`--check-file <path>` 校验 JSON，`--probe-apps` 检查桌面应用定位；均不切换账户。`--tray` 启动到托盘。
-
-## 致谢
-
-参考 [json-format-tool](https://github.com/BIMiracle/json-format-tool) 的转换流程和 [slack-off](https://github.com/BIMiracle/slack-off) 的原生桌面方案。JSON 解析使用 nlohmann/json 3.12.0（MIT），许可证见 [vendor/LICENSE-json.txt](vendor/LICENSE-json.txt)。

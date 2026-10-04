@@ -79,7 +79,3 @@ Encrypted copies cannot be transferred directly to another Windows user or machi
 Build self-tests use temporary directories and synthetic credentials. Window tests cover the icon, tray, repeated launches, preference persistence, startup registration/removal, and exit using isolated directories and a test registry key. Real accounts and startup settings remain unchanged. See [VALIDATION.md](VALIDATION.md) for validation scope.
 
 Read-only diagnostics: `--check-file <path>` validates JSON; `--probe-apps` checks desktop application discovery. Neither switches accounts. `--tray` starts in the tray.
-
-## Acknowledgments
-
-Inspired by the conversion workflow in [json-format-tool](https://github.com/BIMiracle/json-format-tool) and the native desktop approach in [slack-off](https://github.com/BIMiracle/slack-off). JSON parsing uses nlohmann/json 3.12.0 (MIT); see [vendor/LICENSE-json.txt](vendor/LICENSE-json.txt).
